@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: receipts_source
+    database: postgres
+    schema: public
+    tables:
+      - name: person
+        columns:
+          - name: name
+            data_type: character varying
+            description: person name.
+            tests:
+              - not_null
+              - unique
