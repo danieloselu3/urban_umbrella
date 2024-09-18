@@ -44,4 +44,10 @@ models:
         +materialized: table
         +schema: mart_enterprise
 
-
+seeds:
+  +schema: seed_data
+  urban_umbrella:
+    medical_receipt_data:
+      +column_types:
+        Provider NPI: varchar
+        Phone Number: varchar
