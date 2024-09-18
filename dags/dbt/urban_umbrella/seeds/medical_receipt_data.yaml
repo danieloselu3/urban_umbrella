@@ -1,0 +1,30 @@
+version: 2
+
+seeds:
+  - name: medical_receipt_data
+    columns:
+      - name: Patient Name
+      - name: Patient ID
+      - name: Date of Birth
+      - name: Gender
+      - name: Phone Number
+      - name: Email
+      - name: Insurance Provider
+      - name: Insurance ID
+      - name: Provider Name
+      - name: Provider Specialty
+      - name: Provider NPI
+      - name: Encounter Date
+      - name: Encounter Time
+      - name: Encounter Type
+      - name: Diagnosis
+      - name: ICD-10 Code
+      - name: Treatment
+      - name: Procedure Code
+      - name: Procedure Description
+      - name: Total Charges
+      - name: Insurance Coverage
+      - name: Patient Responsibility
+      - name: Encounter ID
+      - name: Receipt Identifier
+
