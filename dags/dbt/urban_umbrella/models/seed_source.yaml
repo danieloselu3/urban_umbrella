@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: seeds
+    schema: public_seed_data
+    tables: 
+      - name: medical_receipt_data
+        columns:
+          - name: Receipt Identifier
+            tests: 
+              - unique
+              - not null
+          - name: Patient ID
+            tests:
+              - not null
+          - name: Provider NPI
+            tests:
+              - not null
+          - name: Encounter ID
+            tests:
+              - not null
+
