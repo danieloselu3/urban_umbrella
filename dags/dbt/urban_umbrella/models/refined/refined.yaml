@@ -2,3 +2,10 @@ version: 2
 
 models:
   - name: ref_person
+  - name: ref_billing
+  - name: ref_encounter
+  - name: ref_patient
+  - name: ref_insurance
+  - name: ref_provider
+  - name: ref_diagnosis
+  - name: ref_procedure
