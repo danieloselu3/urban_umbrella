@@ -4,33 +4,29 @@ with source_data as (
 ), 
 norm_dt as (
     SELECT
+        patient_id,
+        encounter_id,
         receipt_id,
-        total_charge_amt,
         insurance_coverage_amt,
-        deductible_amt
+        deductible_amt,
+        total_charge_amt,
+        record_source_nm
     FROM source_data
-),
-default_value as (
-    SELECT
-        'Missing' as receipt_id,
-        'Missing' as encounter_id,
-        'Missing' as patient_id,
-),
-with_default_value as (
-    SELECT * FROM norm_dt
-    UNION ALL
-    SELECT * FROM default_value
 ),
 hashed_data as (
     SELECT
-        {{ dbt_utils.generate_surrogate_key(['receipt_id']) }} as sgk_medical_receipt_id,
+        {{ dbt_utils.generate_surrogate_key(['patient_id','encounter_id','receipt_id',]) }} as sgk_billing_id,
         {{ dbt_utils.generate_surrogate_key([
-            'receipt_id',
-            'encounter_id',
             'patient_id',
-        ]) }} as sgk_medical_receipt_diff,
+            'encounter_id',
+            'receipt_id',
+            'insurance_coverage_amt',
+            'deductible_amt',
+            'total_charge_amt',
+            'record_source_nm'
+        ]) }} as sgk_billing_diff,
         *,
         '{{ run_started_at }}'::timestamptz as load_dts
-    FROM with_default_value
+    FROM norm_dt
 )
 SELECT * FROM hashed_data
