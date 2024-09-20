@@ -1,5 +1,4 @@
 version: 2
 
 models:
-  - name: stg_person
   - name: stg_medical_receipt_data
