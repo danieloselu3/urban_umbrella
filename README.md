@@ -1,7 +1,9 @@
-# Urban Umbrella
+# Urban Umbrella 
 A personal healthcare project building analytic platform using DBT and Postgres, while leveraging Astro for orchestration
 
-`
+
+
+<!-- `
 Astro dbt setup
 `
 
@@ -88,5 +90,5 @@ alpha_astro:
   target: dev
 Creating our dag
 Create an python alphadag.py file in the root of dags/ folder.
-
+ -->
 
