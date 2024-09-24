@@ -19,4 +19,5 @@ sources:
           - name: Encounter ID
             tests:
               - not null
-
+          - name: Date of Birth
+              - not null
