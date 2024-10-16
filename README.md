@@ -1,5 +1,5 @@
 # Urban Umbrella 
-A personal healthcare project building analytic platform using DBT and Postgres, while leveraging Astro for orchestration
+A healthcare project building analytic platform using DBT and Postgres, while leveraging Astro for orchestration
 
 
 
